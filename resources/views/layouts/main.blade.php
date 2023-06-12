@@ -13,7 +13,9 @@
        body {
       position: relative;
       min-height: 100vh;
+      color: red;
     }
+    
     .wave-background {
       position: absolute;
       bottom: 0;
