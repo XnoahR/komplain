@@ -22,3 +22,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/user',UserController::class);
+Route::delete('/user/{id_user}',[UserController::class,'destroy']);

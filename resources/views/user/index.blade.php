@@ -27,7 +27,11 @@
                     <td scope="col">{{ $user->tgl_lahir }}</td>
                     <td scope="col">{{ $user->roles }}</td>
                     <td scope="col"><a href="{{ route('user.edit',$user->id_user) }}"><button class="btn btn-sm btn-outline-info">UBAH</button></a> |
-                        <a href=""><button class="btn btn-sm btn-outline-danger">HAPUS</button></a>
+                        <form action="/user/{{ $user->id_user }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
+                        </form>
                     </td>
                 </tr>
                 <?php $id++; ?>
