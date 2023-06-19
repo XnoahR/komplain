@@ -26,7 +26,7 @@
                     <td scope="col">{{ $user->jenis_kelamin }}</td>
                     <td scope="col">{{ $user->tgl_lahir }}</td>
                     <td scope="col">{{ $user->roles }}</td>
-                    <td scope="col"><a href=""><button class="btn btn-sm btn-outline-info">UBAH</button></a> |
+                    <td scope="col"><a href="{{ route('user.edit',$user->id_user) }}"><button class="btn btn-sm btn-outline-info">UBAH</button></a> |
                         <a href=""><button class="btn btn-sm btn-outline-danger">HAPUS</button></a>
                     </td>
                 </tr>
