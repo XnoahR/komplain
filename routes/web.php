@@ -29,6 +29,11 @@ Route::get('/register', function () {
         'title' => 'Register',
     ]);
 });
+Route::get('/dashboard', function () {
+    return view('admin.index',[
+        'title' => 'login',
+    ]);
+});
 
 Route::resource('/user',UserController::class);
 Route::delete('/user/{id_user}',[UserController::class,'destroy']);
