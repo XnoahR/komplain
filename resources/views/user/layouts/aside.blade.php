@@ -2,21 +2,31 @@
     <nav id="sidebar">
       <div class="custom-menu">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
-          <i class="fa fa-bars"></i>
+            <i class="fa-solid fa-bars" style="color: #000000;"></i>
           <span class="sr-only">Toggle Menu</span>
         </button>
       </div>
       <h1><a href="index.html" class="logo">Project Name</a></h1>
       <ul class="list-unstyled components mb-5">
+        {{-- User --}}
         <li class="active">
             <a href="#"><span class="fa fa-user mr-3"></span> Profile</a>
         </li>
         <li>
           <a href="#"><span class="fa fa-plus mr-3"></span> Add Complaint</a>
-  
         </li>
         <li>
-          <a href="#"><span class="fa fa-list mr-3"></span> Unsolved Complaints</a>
+          <a href="#"><span class="fa fa-comments mr-3"></span> Unsolved Complaints</a>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
+        </li>
+    {{-- Admin/Staff --}}
+        <li>
+          <a href="#"><span class="fa fa-chart-simple mr-3"></span> Statistics</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-database mr-3"></span> All Complaint</a>
         </li>
         <li>
           <a href="#"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
