@@ -10,10 +10,10 @@
       <ul class="list-unstyled components mb-5">
         {{-- User --}}
         <li class="active">
-            <a href="#"><span class="fa fa-user mr-3"></span> Profile</a>
+            <a href="{{ route('profile') }}"><span class="fa fa-user mr-3"></span> Profile</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-plus mr-3"></span> Add Complaint</a>
+          <a href="{{ route('komplain') }}"><span class="fa fa-plus mr-3"></span> Add Complaint</a>
         </li>
         <li>
           <a href="#"><span class="fa fa-comments mr-3"></span> Unsolved Complaints</a>

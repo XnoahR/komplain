@@ -34,6 +34,11 @@ Route::get('/login', function () {
         'title' => 'Login',
     ]);
 })->name('login');
+Route::get('/komplain', function () {
+    return view('user.komplain',[
+        'title' => 'komplain',
+    ]);
+})->name('komplain');
 
 Route::resource('/user',UserController::class);
 Route::delete('/user/{id_user}',[UserController::class,'destroy']);
