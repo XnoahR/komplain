@@ -1,29 +1,10 @@
 @extends('user.layouts.main')
 
 @section('main')
-<main id="main">
-  <!-- ======= Breadcrumbs ======= -->
-  <section class="breadcrumbs">
-    <div class="container">
-
-      <div class="d-flex justify-content-between align-items-center">
-        <h2>Inner Page</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Inner Page</li>
-        </ol>
-      </div>
-
-    </div>
-  </section><!-- End Breadcrumbs -->
-
-  <section class="inner-page">
-    <div class="container">
-      <p>
-        Example inner page template
-      </p>
-    </div>
-  </section>
-
-</main><!-- End #main -->
+<div id="content" class="p-4 p-md-5 pt-5">
+  <h2 class="mb-4">Komplain Sekarang</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
 @endsection
