@@ -4,7 +4,7 @@
 
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <a href="#header" class="scrollto footer-logo"><img src="assets/img/hero-logo.png" alt=""></a>
+          <a href="#header" class="scrollto footer-logo"><img src="assets/login/img/hero-logo.png" alt=""></a>
           <h3>Knight</h3>
           <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
         </div>
