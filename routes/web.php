@@ -15,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('session.index',[
+        'title' => 'login',
+    ]);
+});
+Route::get('/home', function () {
     return view('user.index',[
-        'title' => 'home',
-
+        'title' => 'Home',
+    ]);
+});
+Route::get('/register', function () {
+    return view('session.register',[
+        'title' => 'Register',
     ]);
 });
 
