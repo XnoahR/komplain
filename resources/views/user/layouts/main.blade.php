@@ -5,6 +5,7 @@
   </head>
   <body>
 		@include('user.layouts.nav')
+		@yield('sidebar')
 		@yield('main')
 
         <!-- Page Content  -->

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -15,6 +16,7 @@
 </head>
 
 <body>
+    @include('user.layouts.nav')
     @if ($errors->any()) 
     @foreach ($errors->all() as $error)
     <div class="alert alert-danger" role="alert">
@@ -24,6 +26,12 @@
 @endif
 
 
+@if (session()->has('success'))
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismis="alert"></button>
+    </div>
+@endif
 @if (session()->has('loginError'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('loginError') }}
@@ -35,18 +43,18 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Register</h2>
+                    <h2 class="heading-section">Login</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">
                     <div class="wrap d-md-flex">
-                        <div class="img" style="background-image: url({{ asset('assets/login/images/bg-2.png') }});">
+                        <div class="img" style="background-image: url({{ asset('assets/login/images/bg-1.png') }});">
                         </div>
                         <div class="login-wrap p-4 p-md-5">
                             <div class="d-flex">
                                 <div class="w-100">
-                                    <h3 class="mb-4">Sign Up</h3>
+                                    <h3 class="mb-4">Sign In</h3>
                                 </div>
                                 <div class="w-100">
                                     <p class="social-media d-flex justify-content-end">
@@ -59,22 +67,19 @@
                                     </p>
                                 </div>
                             </div>
-                            {{-- <form action="{{ route('create_account') }}" method="POST" class="signin-form"> --}}
+                            <form action="/login" method="POST" class="signin-form">
                                 @csrf
                                 <div class="form-group mb-3">
-                                    <label class="label" for="name">name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" autofocus required>
-                                </div>
-                                <div class="form-group mb-3">
                                     <label class="label" for="email">email</label>
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="Username/Email" autofocus required>
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Email" autofocus required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="password">Password</label>
                                     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-danger rounded submit px-3">Register</button>
+                                    <button type="submit" class="form-control btn btn-danger rounded submit px-3">Sign
+                                        In</button>
                                 </div>
                                 <div class="form-group d-md-flex">
                                     <div class="w-50 text-left">
@@ -88,7 +93,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <p class="text-center">Have an account? <a  href="{{ url('/') }}">Sign in</a></p>
+                            <p class="text-center">Not a member? <a  href="{{ route('register') }}">Sign Up</a></p>
                         </div>
                     </div>
                 </div>
