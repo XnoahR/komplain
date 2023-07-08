@@ -19,9 +19,14 @@ Route::get('/', function () {
         'title' => 'login',
     ]);
 });
+Route::get('/home', function () {
+    return view('user.index',[
+        'title' => 'Home',
+    ]);
+});
 Route::get('/register', function () {
     return view('session.register',[
-        'title' => 'login',
+        'title' => 'Register',
     ]);
 });
 
