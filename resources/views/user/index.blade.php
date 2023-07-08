@@ -1,41 +1,29 @@
-@extends('layouts.main')
+@extends('user.layouts.main')
 
-@section('ambil')
-    <a href="{{ route('user.create') }}"><button class="btn btn-primary mb-3 mt-3"> Tambah</button></a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Email</th>
-                <th scope="col">Nomor HP</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Roles</th>
-                <th scope="col">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $id = 1; ?>
-            @foreach ($users as $user)
-                <tr>
-                    <th scope="col"><?= $id ?></th>
-                    <td scope="col">{{ $user->nama }}</td>
-                    <td scope="col">{{ $user->email }}</td>
-                    <td scope="col">{{ $user->nohp }}</td>
-                    <td scope="col">{{ $user->jenis_kelamin }}</td>
-                    <td scope="col">{{ $user->tgl_lahir }}</td>
-                    <td scope="col">{{ $user->roles }}</td>
-                    <td scope="col"><a href="{{ route('user.edit',$user->id_user) }}"><button class="btn btn-sm btn-outline-info">UBAH</button></a> |
-                        <form action="/user/{{ $user->id_user }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
-                        </form>
-                    </td>
-                </tr>
-                <?php $id++; ?>
-            @endforeach
-        </tbody>
-    </table>
+@section('main')
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Inner Page</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Inner Page</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <section class="inner-page">
+    <div class="container">
+      <p>
+        Example inner page template
+      </p>
+    </div>
+  </section>
+
+</main><!-- End #main -->
 @endsection
