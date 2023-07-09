@@ -16,6 +16,8 @@ return new class extends Migration
             $table->bigInteger('id_user')->unsigned();
             $table->bigInteger('id_admin')->unsigned();
             $table->bigInteger('id_rpb')->unsigned();
+            $table->string('subject');
+            $table->string('description');
             $table->enum('status',['1','2','3','4','5']);//'pending','dikirim','diproses','ditolak','disetujui'
             $table->date('date_send');
             $table->date('date_done')->nullable();

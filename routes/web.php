@@ -32,6 +32,8 @@ Route::middleware(['needLogin','profileAuth'])->group(function () {
 });
 Route::middleware(['needLogin','userOnly'])->group(function () {
     Route::get('/komplain',[complainController::class,'index'])->name('complaint');
+    Route::post('/komplain',[complainController::class,'store'])->name('complaint_store');
+    //product
     Route::get('/product',[productController::class,'index'])->name('product');
     Route::get('/product/create',[productController::class,'create'])->name('product_create');
     Route::post('/product',[productController::class,'store'])->name('product_store');

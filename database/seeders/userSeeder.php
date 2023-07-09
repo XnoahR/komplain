@@ -30,6 +30,20 @@ class userSeeder extends Seeder
             'role' => '2',
         ]);
         DB::table('users')->insert([
+            'name'=> 'staff ray',
+            'email' => 'raychi@staff.com',
+            'password'=> Hash::make('staff'),
+            'phone' => '085331886336',
+            'role' => '2',
+        ]);
+        DB::table('users')->insert([
+            'name'=> 'staff bas',
+            'email' => 'tulus@staff.com',
+            'password'=> Hash::make('staff'),
+            'phone' => '089655847696',
+            'role' => '2',
+        ]);
+        DB::table('users')->insert([
             'name'=> 'admin',
             'email' => 'admin',
             'password'=> Hash::make('admin'),
