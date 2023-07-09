@@ -12,15 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('riwayat_pembelian_barang', function (Blueprint $table) {
-            $table->id('id_riwayat');
-            $table->binary('struk_pembelian');
-            $table->string('name',50);
-            $table->string('merk',50);
-            $table->string('harga',50);
-            $table->integer('jumlah');
-            $table->integer('masa_garansi');
-            $table->date('tgl_pembelian');
+            $table->id();
+            $table->bigInteger('id_user')->unsigned();
+            $table->string('name', 50);
+            $table->string('price', 50);
+            $table->integer('amount');
+            $table->string('brand', 50);
+            $table->integer('warranty');
+            $table->date('buy_date');
+            $table->string('struct');
             $table->timestamps();
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
