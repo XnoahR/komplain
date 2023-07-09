@@ -71,6 +71,7 @@ Route::get('/profile',[UserController::class,'index'])->name('profile');
 Route::get('/login',[sessionController::class,'index'])->name('login_page');
 Route::post('/login',[sessionController::class,'authenticate'])->name('loginauth');
 Route::get('/register',[sessionController::class,'register'])->name('register');
+Route::post('/register/create',[sessionController::class,'create'])->name('create_account');
 Route::get('/logout',[sessionController::class,'logout'])->name('logout');
 
 Route::resource('/user',UserController::class);

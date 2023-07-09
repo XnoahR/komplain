@@ -60,7 +60,7 @@
                                     </p>
                                 </div>
                             </div>
-                            {{-- <form action="{{ route('create_account') }}" method="POST" class="signin-form"> --}}
+                            <form action="{{ route('create_account') }}" method="POST" class="signin-form">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">name</label>
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <p class="text-center">Have an account? <a  href="{{ route('login') }}">Sign in</a></p>
+                            <p class="text-center">Have an account? <a  href="{{ route('login_page') }}">Sign in</a></p>
                         </div>
                     </div>
                 </div>
