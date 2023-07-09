@@ -4,5 +4,5 @@
   <a class="nav-link text-light  my-2" href="{{ route('profile') }}">Profile</a>
   <a class="nav-link text-light  my-2" href="{{ route('login') }}">Login</a>
   <a class="nav-link text-light  my-2" href="{{ route('register') }}">Register</a>
-  <a class="nav-link text-light  my-2" href="#">Logout</a>
+  <a class="nav-link text-light  my-2" href="#">Logout</a> 
 </nav>
