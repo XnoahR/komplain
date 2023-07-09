@@ -62,5 +62,8 @@ Route::get('/all', function () {
     ]);
 })->name('all');
 
+Route::get('/profile',[UserController::class,'index'])->name('profile');
+
+
 Route::resource('/user',UserController::class);
 Route::delete('/user/{id_user}',[UserController::class,'destroy']);

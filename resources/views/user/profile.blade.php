@@ -23,15 +23,26 @@
                 <input type="text" class="form-control border" name="name" id="name" value="unknown">
             </div>
             <div class="form-group">
-                <label for="nohp">Phone Number</label>
-                <input type="text" class="form-control border" name="nohp" id="nohp" value="+62xxxxxx">
-            </div>
-            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control border" name="email" id="email" value="xx">
             </div>
-         
-            <button type="submit" class="mt-3 mb-5 btn btn-success float-end">Submit</button>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control border" name="phone" id="phone" value="+62xxxxxx">
+            </div>
+            <div class="form-group">
+                <label for="Born">Born Date</label>
+                <input type="date" class="form-control border" name="Born" id="Born" value="">
+            </div>
+            <div class="form-group">
+                <label for="gender" class="form-label">Product Condition</label>
+                <select class="form-select" aria-label="Default select example" id="gender">
+                  <option selected>Gender</option>
+                  <option value="L">Male</option>
+                  <option value="P">Female</option>
+                </select>
+              </div>
+            <button type="submit" class="mt-3 mb-5 btn btn-success float-end">Save</button>
             </form>
        
     </div>
