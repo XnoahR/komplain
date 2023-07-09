@@ -15,14 +15,14 @@ class complainController extends Controller
 
     function unsolved(){
         return view('user.unsolved',[
-            'title' => 'Unsolved Complaint',
-            'Active' => 'Unsolved',
+            'title' => 'Unsolved',
+            
         ]);
     }
     function solved(){
         return view('user.solved',[
-            'title' => 'Solved Complaint',
-            'Active' => 'Solved',
+            'title' => 'Solved',
+
         ]);
     }
 

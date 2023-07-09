@@ -6,30 +6,32 @@
           <span class="sr-only">Toggle Menu</span>
         </button>
       </div>
-      <h1><a href="index.html" class="logo">Project Name</a></h1>
+      <h1><a href="index.html" class="logo">Profile Menu</a></h1>
       <ul class="list-unstyled components mb-5">
-        {{-- User --}}
-        <li class="active">
+        <li class="{{ ($title === "Profile")? 'active' : '' }}">
             <a href="{{ route('profile') }}"><span class="fa fa-user mr-3"></span> Profile</a>
         </li>
-        <li>
+        {{-- User --}}
+        @can('user')
+        <li class="{{ ($title === "Complaint")? 'active' : '' }}">
           <a href="{{ route('complaint') }}"><span class="fa fa-plus mr-3"></span> Add Complaint</a>
         </li>
-        <li>
+        <li class="{{ ($title === "Unsolved")? 'active' : '' }}">
           <a href="{{ route('unsolved') }}"><span class="fa fa-comments mr-3"></span> Unsolved Complaints</a>
         </li>
-        
+        @endcan
     {{-- Admin/Staff --}}
+    @can('staff')
         <li>
           <a href="#"><span class="fa fa-chart-simple mr-3"></span> Statistics</a>
         </li>
-        <li>
+        <li class = "{{ ($title === "All Complaint")? 'active' : '' }}">
           <a href="{{ route('all_complaint') }}"><span class="fa fa-database mr-3"></span> All Complaint</a>
         </li>
-        <li>
+        @endcan
+        <li class = "{{ ($title === "Solved")? 'active' : '' }}">
             <a href="{{ route('solved') }}"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
         </li>
       </ul>
-      
     </nav>
   
