@@ -27,12 +27,13 @@ Route::get('/', function () {
 Route::middleware(['needLogin','profileAuth'])->group(function () {
     Route::get('/profile',[UserController::class,'index'])->name('profile');
     Route::patch('/profile/{user}',[UserController::class,'update'])->name('profile_update');
-    Route::get('/unsolved',[complainController::class,'unsolved'])->name('unsolved');
     Route::get('/solved',[complainController::class,'solved'])->name('solved');
 });
 Route::middleware(['needLogin','userOnly'])->group(function () {
     Route::get('/komplain',[complainController::class,'index'])->name('complaint');
     Route::post('/komplain',[complainController::class,'store'])->name('complaint_store');
+    Route::get('/unsolved',[complainController::class,'unsolved'])->name('unsolved');
+    Route::get('/unsolved/{complaint}',[complainController::class,'destroy'])->name('unsolved_delete');
     //product
     Route::get('/product',[productController::class,'index'])->name('product');
     Route::get('/product/create',[productController::class,'create'])->name('product_create');
