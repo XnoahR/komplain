@@ -16,6 +16,9 @@
         <li class="{{ ($title === "Complaint")? 'active' : '' }}">
           <a href="{{ route('complaint') }}"><span class="fa fa-plus mr-3"></span> Add Complaint</a>
         </li>
+        <li class="{{ ($title === "Product")? 'active' : '' }}">
+          <a href="{{ route('product') }}"><span class="fa fa-briefcase mr-3"></span>Product</a>
+        </li>
         <li class="{{ ($title === "Unsolved")? 'active' : '' }}">
           <a href="{{ route('unsolved') }}"><span class="fa fa-comments mr-3"></span> Unsolved Complaints</a>
         </li>

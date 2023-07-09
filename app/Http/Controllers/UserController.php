@@ -115,7 +115,7 @@ class UserController extends Controller
         $user->phone = $validated['phone'];
         $user->gender = $validated['gender'];
         $user->born = $validated['born'];
-        $user->roles = '1';
+        $user->profile_picture = $validated['profile_picture'];
         $user->save();
 
         return redirect('profile')->with('success','Data berhasil diganti!'); 
