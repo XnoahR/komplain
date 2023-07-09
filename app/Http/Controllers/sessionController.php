@@ -67,7 +67,7 @@ class sessionController extends Controller
             'name' => $credentials['name'],
             'email' => $credentials ['email'],
             'password' => Hash::make($credentials ['password']),
-            'role' => 'user'
+            'role' => '1'
         ];
         User::create($registerinfo);
 
