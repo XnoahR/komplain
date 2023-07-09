@@ -14,7 +14,7 @@ class complainController extends Controller
     {
         $user = Auth::user();
         $product = Riwayat_pembelian_barang::where('id_user', $user->id)->get();
-        return view('user.komplain', [
+        return view('user.complaint.komplain', [
             'title' => 'Complaint',
             'product' => $product,
         ]);
@@ -36,7 +36,7 @@ class complainController extends Controller
             }
         }
 
-        return view('user.unsolved', [
+        return view('user.complaint.unsolved', [
             'title' => 'Unsolved',
             'complaint' => $complaints,
             'products' => $products,
@@ -58,7 +58,7 @@ class complainController extends Controller
                 $products[] = $product->name;
             }
         }
-        return view('user.solved', [
+        return view('user.complaint.solved', [
             'title' => 'Solved',
             'complaint' => $complaints,
             'products' => $products,
