@@ -22,53 +22,18 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-// Route::get('/profile', function () {
-//     return view('user.profile',[
-//         'title' => 'Profile',
-//     ]);
-// })->name('profile');
-
-// Route::get('/register', function () {
-//     return view('user.session.register',[
-//         'title' => 'Register',
-//     ]);
-// })->name('register');
-
-// Route::get('/login', function () {
-//     return view('user.session.index',[
-//         'title' => 'Login',
-//     ]);
-// })->name('login');
-
-// Route::get('/komplain', function () {
-//     return view('user.komplain',[
-//         'title' => 'komplain',
-//     ]);
-// })->name('komplain');
-
-Route::get('/unsolved', function () {
-    return view('user.unsolved',[
-        'title' => 'unsolved',
-    ]);
-})->name('unsolved');
-
-Route::get('/solved', function () {
-    return view('user.solved',[
-        'title' => 'solved',
-    ]);
-})->name('solved');
-
-Route::get('/all', function () {
-    return view('user.all',[
-        'title' => 'All Complaint',
-    ]);
-})->name('all');
-
+//Profile Route
 Route::middleware(['needLogin','profileAuth'])->group(function () {
     Route::get('/profile',[UserController::class,'index'])->name('profile');
+    Route::get('/unsolved',[complainController::class,'unsolved'])->name('unsolved');
+    Route::get('/solved',[complainController::class,'solved'])->name('solved');
 });
 Route::middleware(['needLogin','userOnly'])->group(function () {
     Route::get('/komplain',[complainController::class,'index'])->name('complaint');
+});
+Route::middleware(['needLogin','staffOnly'])->group(function () {
+    Route::get('/statisctics',[complainController::class,'statisctics'])->name('statisctics');
+    Route::get('/all',[complainController::class,'all'])->name('all_complaint');
 });
 
 
