@@ -4,14 +4,14 @@
 @endsection
 
 @section('main')
-    <br><br><br><br>
+<br><br><br><br>
     {{-- Tanpa menggunakan define/naming route --}}
 
     {{-- <form action="{{ route('dataupdate',$users->id)}}" method="POST" enctype="multipart/form-data"> --}}
 
     @csrf
     @method('PATCH')
-    <div class="container mt-3 mb-3">
+    <div class="container mt-1 mb-3">
    
         <div class="form-group">
             <img src="{{ asset('assets/login/images/bg-1.png') }}" alt="" width="200px">
@@ -31,7 +31,7 @@
                 <input type="text" class="form-control border" name="email" id="email" value="xx">
             </div>
          
-            <button type="submit" class="mt-3 btn btn-success float-end">Submit</button>
+            <button type="submit" class="mt-3 mb-5 btn btn-success float-end">Submit</button>
             </form>
        
     </div>

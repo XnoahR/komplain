@@ -16,11 +16,9 @@
           <a href="{{ route('komplain') }}"><span class="fa fa-plus mr-3"></span> Add Complaint</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-comments mr-3"></span> Unsolved Complaints</a>
+          <a href="{{ route('unsolved') }}"><span class="fa fa-comments mr-3"></span> Unsolved Complaints</a>
         </li>
-        <li>
-            <a href="#"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
-        </li>
+        
     {{-- Admin/Staff --}}
         <li>
           <a href="#"><span class="fa fa-chart-simple mr-3"></span> Statistics</a>
@@ -29,7 +27,7 @@
           <a href="#"><span class="fa fa-database mr-3"></span> All Complaint</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
+            <a href="{{ route('solved') }}"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
         </li>
       </ul>
     </nav>

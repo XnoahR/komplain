@@ -4,6 +4,7 @@
 @endsection
 
 @section('main')
+<br><br><br><br>
 <form>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Subject</label>
@@ -43,4 +44,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <br><br><br><br> <br><br><br><br> 
 @endsection

@@ -7,6 +7,7 @@
 		@include('user.layouts.nav')
 		@yield('sidebar')
     <div class="container">
+     
 		@yield('main')
   </div>
         <!-- Page Content  -->
