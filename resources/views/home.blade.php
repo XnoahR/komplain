@@ -1,6 +1,12 @@
 @extends('layouts.main')
 
 @section('ambil')
+@if (session()->has('success'))
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismis="alert"></button>
+    </div>
+@endif
 <div class="jumbotron">
     <h1 class="display-4">Welcome to Our Website</h1>
   </div>

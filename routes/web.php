@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\complainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\sessionController;
@@ -45,34 +46,42 @@ Route::get('/', function () {
 //     ]);
 // })->name('komplain');
 
-// Route::get('/unsolved', function () {
-//     return view('user.unsolved',[
-//         'title' => 'unsolved',
-//     ]);
-// })->name('unsolved');
+Route::get('/unsolved', function () {
+    return view('user.unsolved',[
+        'title' => 'unsolved',
+    ]);
+})->name('unsolved');
 
-// Route::get('/solved', function () {
-//     return view('user.solved',[
-//         'title' => 'solved',
-//     ]);
-// })->name('solved');
+Route::get('/solved', function () {
+    return view('user.solved',[
+        'title' => 'solved',
+    ]);
+})->name('solved');
 
-// Route::get('/all', function () {
-//     return view('user.all',[
-//         'title' => 'All Complaint',
-//     ]);
-// })->name('all');
+Route::get('/all', function () {
+    return view('user.all',[
+        'title' => 'All Complaint',
+    ]);
+})->name('all');
 
-Route::get('/profile',[UserController::class,'index'])->name('profile');
+Route::middleware(['needLogin','profileAuth'])->group(function () {
+    Route::get('/profile',[UserController::class,'index'])->name('profile');
+});
+Route::middleware(['needLogin','userOnly'])->group(function () {
+    Route::get('/komplain',[complainController::class,'index'])->name('complaint');
+});
 
 
 
 //Login Route
+Route::middleware(['isLogin'])->group(function () {
 Route::get('/login',[sessionController::class,'index'])->name('login_page');
 Route::post('/login',[sessionController::class,'authenticate'])->name('loginauth');
 Route::get('/register',[sessionController::class,'register'])->name('register');
 Route::post('/register/create',[sessionController::class,'create'])->name('create_account');
+});
 Route::get('/logout',[sessionController::class,'logout'])->name('logout');
+
 
 Route::resource('/user',UserController::class);
 Route::delete('/user/{id_user}',[UserController::class,'destroy']);
