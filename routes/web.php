@@ -19,36 +19,48 @@ Route::get('/', function () {
         'title' => 'Home',
     ]);
 })->name('home');
+
 Route::get('/profile', function () {
     return view('user.profile',[
         'title' => 'Profile',
     ]);
 })->name('profile');
+
 Route::get('/register', function () {
     return view('user.session.register',[
         'title' => 'Register',
     ]);
 })->name('register');
+
 Route::get('/login', function () {
     return view('user.session.index',[
         'title' => 'Login',
     ]);
 })->name('login');
+
 Route::get('/komplain', function () {
     return view('user.komplain',[
         'title' => 'komplain',
     ]);
 })->name('komplain');
+
 Route::get('/unsolved', function () {
     return view('user.unsolved',[
         'title' => 'unsolved',
     ]);
 })->name('unsolved');
+
 Route::get('/solved', function () {
     return view('user.solved',[
         'title' => 'solved',
     ]);
 })->name('solved');
+
+Route::get('/all', function () {
+    return view('user.all',[
+        'title' => 'All Complaint',
+    ]);
+})->name('all');
 
 Route::resource('/user',UserController::class);
 Route::delete('/user/{id_user}',[UserController::class,'destroy']);

@@ -24,11 +24,12 @@
           <a href="#"><span class="fa fa-chart-simple mr-3"></span> Statistics</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-database mr-3"></span> All Complaint</a>
+          <a href="{{ route('all') }}"><span class="fa fa-database mr-3"></span> All Complaint</a>
         </li>
         <li>
             <a href="{{ route('solved') }}"><span class="fa fa-check mr-3"></span> Solved Complaint</a>
         </li>
       </ul>
+      
     </nav>
   
