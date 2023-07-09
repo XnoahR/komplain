@@ -1,29 +1,34 @@
 @extends('user.layouts.main')
 
+
 @section('main')
-<main id="main">
-  <!-- ======= Breadcrumbs ======= -->
-  <section class="breadcrumbs">
-    <div class="container">
+<header>
+  <!-- Intro settings -->
+  <style>
+     .banner {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(21, 23, 53)),url("assets/user/images/venue1.jpg");
+    background-position: center;
+     }
+  </style>
 
-      <div class="d-flex justify-content-between align-items-center">
-        <h2>Inner Page</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Inner Page</li>
-        </ol>
-      </div>
 
+  <!-- Background image -->
+  <section id="home">
+    <div class="container-fluid banner">
+        <div class="container banner-text col-lg-6">
+            <div class="text-center">
+                <p class="fs-1">
+                    WELCOME TO KOMPLAININ!
+                </p>
+                <p>
+                   <H1>UNDER MAINTENANCE!</H1> 
+                </p>
+            </div>
+        </div>
     </div>
-  </section><!-- End Breadcrumbs -->
+</section>
+  <!-- Background image -->
+</header>
 
-  <section class="inner-page">
-    <div class="container">
-      <p>
-        Example inner page template
-      </p>
-    </div>
-  </section>
-
-</main><!-- End #main -->
 @endsection
