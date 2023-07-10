@@ -99,7 +99,7 @@ class complainController extends Controller
         $user = Auth::user();
         $complaint = new Komplain();
         $complaint->id_user = $user->id;
-        $complaint->id_admin = $validated['complaint_type'];
+        $complaint->complaint_type = $validated['complaint_type'];
         $complaint->id_rpb = $validated['product'];
         $complaint->subject = $validated['subject'];
         $complaint->description = $validated['description'];

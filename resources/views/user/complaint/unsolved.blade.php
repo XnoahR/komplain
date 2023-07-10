@@ -33,13 +33,14 @@
             <td><?=$id?></td>
             <td>{{ $cp->subject }}</td>
             <td>{{ $products[$id-1] }}</td>
-            <td>@if ($cp->id_admin == 2 )Entertainment
-             @elseif($cp->id_admin == 3)Management
-             @elseif($cp->id_admin == 4)Other
+            <td>@if ($cp->complaint_type == 1 )Entertainment
+             @elseif($cp->complaint_type == 2)Management
+             @elseif($cp->complaint_type == 3)College
+             @elseif($cp->complaint_type == 4)Other
             @endif</td>
             <td>{{$cp->date_send}}</td>
-            <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</button></td>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#description{{ $cp->id }}">Details</button></td>
+            <div class="modal fade" id="description{{ $cp->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">

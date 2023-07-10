@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('komplain', function (Blueprint $table) {
             $table->id('id');
             $table->bigInteger('id_user')->unsigned();
-            $table->bigInteger('id_admin')->unsigned();
+            $table->enum('complaint_type',['1','2','3','4'])->nullable();
             $table->bigInteger('id_rpb')->unsigned();
             $table->string('subject');
             $table->string('description');
@@ -23,7 +23,6 @@ return new class extends Migration
             $table->date('date_done')->nullable();
             $table->timestamps();
             $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_admin')->references('id')->on('users');
             $table->foreign('id_rpb')->references('id')->on('riwayat_pembelian_barang');
         });
     }

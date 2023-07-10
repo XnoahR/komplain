@@ -6,7 +6,19 @@
 @section('main')
 <br><br><br><br>
     {{-- Tanpa menggunakan define/naming route --}}
-
+    @if (session()->has('success'))
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismis="alert"></button>
+    </div>
+@endif
+@if ($errors->any()) 
+    @foreach ($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+        {{ $error }}
+      </div>
+    @endforeach
+@endif
     <form action="{{ route('profile_update',$user->id)}}" method="POST" enctype="multipart/form-data">
 
     @csrf
@@ -41,7 +53,7 @@
             <div class="form-group">
                 <label for="gender" class="form-label">Product Condition</label>
                 <select class="form-select" aria-label="Default select example" name ="gender" id="gender">
-                  <option selected>Gender</option>
+                  <option value ="">Gender</option>
                   <option value="L" {{ $user->gender == 'L' ? 'selected' : '' }}>Male</option>
                   <option value="P" {{ $user->gender == 'P' ? 'selected' : '' }}>Female</option>
                 </select>

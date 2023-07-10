@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('born')->nullable();
             $table->enum('gender',['L','P'])->nullable();
             $table->enum('role',['1','2','3','4'])->nullable();
+            $table->enum('role_penugasan',['1','2','3','4'])->nullable(); //1. Entertainment, 2.Management, 3.College, 4.Other
             $table->timestamps();
         });
     }
