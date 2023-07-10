@@ -48,8 +48,10 @@ Route::middleware(['needLogin','staffOnly'])->group(function () {
     Route::patch('/all/{complaint}',[complainController::class,'update'])->name('all_update');
 });
 
-Route::middleware(['needLogin','adminOnly'])->group(function () {
+Route::middleware(['needLogin','adminAuth'])->group(function () {
     Route::get('/data',[adminController::class,'index'])->name('data');
+});
+Route::middleware(['needLogin','adminOnly'])->group(function () {
     Route::get('/role',[adminController::class,'role'])->name('role_manage');
     Route::patch('/role{user}',[adminController::class,'update'])->name('role_update');
 });

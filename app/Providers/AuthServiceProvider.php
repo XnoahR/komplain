@@ -33,6 +33,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('auth',function($user){
             return in_array($user->role,['1', '2']);
         });
+        Gate::define('adonly',function($user){
+            return in_array($user->role,['3', '4']);
+        });
         Gate::define('admin',function($user){
             return $user->role=='3';
         });

@@ -8,10 +8,14 @@
       </div>
       <h1><a href="{{ url('/') }}" class="logo">Back Home</a></h1>
       <ul class="list-unstyled components mb-5">
-        @can('admin')
+
+        @can('adonly')
         <li class="{{ ($title === "Data")? 'active' : '' }}">
           <a href="{{ route('data') }}"><span class="fa fa-server mr-3"></span> Data</a>
       </li>
+      
+      @endcan
+        @can('admin')
         <li class="{{ ($title === "Role Management")? 'active' : '' }}">
           <a href="{{ route('role_manage') }}"><span class="fa fa-user-group mr-3"></span> Role Management</a>
       </li>
