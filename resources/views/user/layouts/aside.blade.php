@@ -25,9 +25,7 @@
         @endcan
     {{-- Admin/Staff --}}
     @can('staff')
-        <li>
-          <a href="#"><span class="fa fa-chart-simple mr-3"></span> Statistics</a>
-        </li>
+        
         <li class = "{{ ($title === "All Complaint")? 'active' : '' }}">
           <a href="{{ route('all_complaint') }}"><span class="fa fa-database mr-3"></span> All Complaint</a>
         </li>

@@ -28,10 +28,10 @@
     <div class="mb-3"> 
       <label for="complaint_type" class="form-label">Type of Complaint</label>
       <select class="form-select" aria-label="Default select example" name="complaint_type" id="complaint_type">
-        <option selected>Select Complaint Type</option>
-        <option value="2">Entertainment</option>
-        <option value="3">Management</option>
-        <option value="4">College</option>
+        <option selected value ="">Select Complaint Type</option>
+        <option value="1">Entertainment</option>
+        <option value="2">Management</option>
+        <option value="3">College</option>
         <option value="4">Other</option>
       </select>
     </div>

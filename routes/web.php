@@ -45,6 +45,7 @@ Route::middleware(['needLogin','userOnly'])->group(function () {
 Route::middleware(['needLogin','staffOnly'])->group(function () {
     Route::get('/statisctics',[complainController::class,'statisctics'])->name('statisctics');
     Route::get('/all',[complainController::class,'all'])->name('all_complaint');
+    Route::patch('/all/{complaint}',[complainController::class,'update'])->name('all_update');
 });
 
 

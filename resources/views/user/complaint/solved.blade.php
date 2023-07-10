@@ -28,14 +28,16 @@
             </tr>
         </thead>
         <?php $id = 1?>
+        @can('user')  
         @foreach ($complaint as $cp)
         <tbody>
             <td><?=$id?></td>
             <td>{{ $cp->subject }}</td>
             <td>{{ $products[$id-1] }}</td>
-            <td>@if ($cp->id_admin == 2 )Entertainment
-             @elseif($cp->id_admin == 3)Management
-             @elseif($cp->id_admin == 4)Other
+            <td>@if ($cp->complaint_type == 1 )Entertainment
+              @elseif($cp->complaint_type == 2)Management
+              @elseif($cp->complaint_type == 3)College
+              @elseif($cp->complaint_type == 4)Other
             @endif</td>
             <td>{{$cp->date_send}}</td>
             <td><button class="btn btn-primary" data-toggle="modal" data-target="#description{{ $cp->id }}">Details</button></td>
@@ -67,6 +69,50 @@
         <?php $id++; ?>
         @endforeach
       </table>
+      @endcan
+
+      @can('staff')
+      @foreach ($complaint_staff as $cp)
+      <tbody>
+          <td><?=$id?></td>
+          <td>{{ $cp->subject }}</td>
+          <td>{{ $products_staff[$id-1] }}</td>
+          <td>@if ($cp->complaint_type == 1 )Entertainment
+            @elseif($cp->complaint_type == 2)Management
+            @elseif($cp->complaint_type == 3)College
+            @elseif($cp->complaint_type == 4)Other
+          @endif</td>
+          <td>{{$cp->date_send}}</td>
+          <td><button class="btn btn-primary" data-toggle="modal" data-target="#description{{ $cp->id }}">Details</button></td>
+          <div class="modal fade" id="description{{ $cp->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    {{ $cp->description }}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <td>@if ($cp->status == 4)Ditolak
+            @elseif($cp->status == 5)Disetujui
+          @endif</td>
+          
+          
+      </tbody>
+      <?php $id++; ?>
+      @endforeach
+    </table>
+      @endcan
 </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 @endsection

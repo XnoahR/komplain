@@ -28,6 +28,7 @@ class userSeeder extends Seeder
             'password'=> Hash::make('staff'),
             'phone' => '081617213287',
             'role' => '2',
+            'role_penugasan' => '1',
         ]);
         DB::table('users')->insert([
             'name'=> 'staff ray',
@@ -35,6 +36,7 @@ class userSeeder extends Seeder
             'password'=> Hash::make('staff'),
             'phone' => '085331886336',
             'role' => '2',
+            'role_penugasan' => '2',
         ]);
         DB::table('users')->insert([
             'name'=> 'staff bas',
@@ -42,6 +44,7 @@ class userSeeder extends Seeder
             'password'=> Hash::make('staff'),
             'phone' => '089655847696',
             'role' => '2',
+            'role_penugasan' => '3',
         ]);
         DB::table('users')->insert([
             'name'=> 'admin',
