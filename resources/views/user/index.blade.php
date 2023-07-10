@@ -7,9 +7,26 @@
   <style>
      .banner {
     height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(21, 23, 53)),url("assets/user/images/venue1.jpg");
+    background: url("assets/user/images/bgutama.jpg");
     background-position: center;
      }
+     
+     .fs-1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
   </style>
 
 
@@ -21,11 +38,13 @@
                 <p class="fs-1">
                     WELCOME TO KOMPLAININ!
                 </p>
-                <p>
-                   <H1>UNDER MAINTENANCE!</H1> 
-                </p>
             </div>
         </div>
+    </div>
+    <div class="text-center">
+        <p class = "fs-6">
+        Segala kebutuhan terkait klaim garansi barang, ada kami di sini. Silahkan untuk masuk ke halaman utama dengan menggunakan login
+        <p>
     </div>
 </section>
   <!-- Background image -->

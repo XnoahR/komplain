@@ -22,7 +22,7 @@
   @csrf
     <div class="mb-3">
       <label for="subject" class="form-label">Subject</label>
-      <input type="text" class="form-control border" id="subject" name="subject" aria-describedby="emailHelp" value="playstation">
+      <input type="text" class="form-control border" id="subject" name="subject" aria-describedby="emailHelp" value="Subject name">
     </div>
     {{-- id staff --}}
     <div class="mb-3"> 
