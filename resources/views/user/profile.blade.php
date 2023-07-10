@@ -51,7 +51,7 @@
                 <input type="date" class="form-control border" name="born" id="born" value="{{ $user->born }}">
             </div>
             <div class="form-group">
-                <label for="gender" class="form-label">Product Condition</label>
+                <label for="gender" class="form-label">Gender</label>
                 <select class="form-select" aria-label="Default select example" name ="gender" id="gender">
                   <option value ="">Gender</option>
                   <option value="L" {{ $user->gender == 'L' ? 'selected' : '' }}>Male</option>
