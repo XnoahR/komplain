@@ -6,7 +6,7 @@
   <body>
 		@include('user.layouts.nav')
 		@yield('sidebar')
-    <div class="container">
+    <div class="container-fluid">
      
 		@yield('main')
   </div>

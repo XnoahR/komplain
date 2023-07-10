@@ -5,6 +5,9 @@
   @can('auth')
   <a class="nav-link text-light  my-2" href="{{ route('profile') }}">Profile</a>
   @endcan
+  @can('admin')
+  <a class="nav-link text-light  my-2" href="{{ route('data') }}">Data</a>
+  @endcan
   @cannot('isLogin')
   <a class="nav-link text-light  my-2" href="{{ route('login_page') }}">Login</a>
   <a class="nav-link text-light  my-2" href="{{ route('register') }}">Register</a>

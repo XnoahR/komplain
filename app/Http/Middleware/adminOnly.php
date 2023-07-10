@@ -15,9 +15,9 @@ class adminOnly
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!(auth()->user()->role=='3') || !(auth()->user()->role=='4')){
-            abort(403);
+        if(auth()->user()->role=='3'){
+            return $next($request);
         }
-        return $next($request);
+        abort(403);
     }
 }

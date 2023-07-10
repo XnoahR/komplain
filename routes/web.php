@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\complainController;
-use App\Http\Controllers\productController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\productController;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\complainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,14 @@ Route::middleware(['needLogin','userOnly'])->group(function () {
     Route::get('/product/{product}',[productController::class,'destroy'])->name('product_delete');
 });
 Route::middleware(['needLogin','staffOnly'])->group(function () {
-    Route::get('/statisctics',[complainController::class,'statisctics'])->name('statisctics');
     Route::get('/all',[complainController::class,'all'])->name('all_complaint');
     Route::patch('/all/{complaint}',[complainController::class,'update'])->name('all_update');
+});
+
+Route::middleware(['needLogin','adminOnly'])->group(function () {
+    Route::get('/data',[adminController::class,'index'])->name('data');
+    Route::get('/role',[adminController::class,'role'])->name('role_manage');
+    Route::patch('/role{user}',[adminController::class,'update'])->name('role_update');
 });
 
 

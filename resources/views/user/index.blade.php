@@ -16,7 +16,7 @@
   <!-- Background image -->
   <section id="home">
     <div class="container-fluid banner">
-        <div class="container banner-text col-lg-6">
+        <div class="container-fluid banner-text col-lg-6">
             <div class="text-center">
                 <p class="fs-1">
                     WELCOME TO KOMPLAININ!
